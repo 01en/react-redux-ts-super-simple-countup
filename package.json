@@ -12,6 +12,7 @@
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
     "typescript": "3.5.3"
   },
   "scripts": {
@@ -36,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.1"
+    "@types/react-redux": "^7.1.1",
+    "@types/redux-logger": "^3.0.7",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

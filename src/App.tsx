@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import { Action, createStore } from 'redux';
+import { Action, createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 interface StateProps {
   count: number;
@@ -57,9 +58,16 @@ const reducer = (state: RootState = INITIAL_STATE, action: Action) => {
   }
 }
 
-// ⑤: Redux Store作成
+const composeEnhancers = composeWithDevTools({
+
+});
+
+import logger from 'redux-logger'
 export const store = createStore(
-  reducer
+  reducer,
+  composeEnhancers(
+    applyMiddleware(logger)  // add logger!
+  )
 );
 
 // ⑥: React Component + Redux Storeの結合
