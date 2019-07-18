@@ -3,6 +3,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { Action, createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger'
 
 interface StateProps {
   count: number;
@@ -62,7 +63,6 @@ const composeEnhancers = composeWithDevTools({
 
 });
 
-import logger from 'redux-logger'
 export const store = createStore(
   reducer,
   composeEnhancers(
